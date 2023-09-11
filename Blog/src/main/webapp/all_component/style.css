@@ -1,9 +1,66 @@
-.bg-custom{
-	background-color: #4caf50;
+/* CSS cho section.footer */
+section.footer {
+    background-color: rgb(128, 64, 64);
+    padding: 40px 0;
 }
 
-.navbar .nav-item:hover .nav-link{
-	background-color: white;
-	color:#4caf50;
-	border-radius: 20px;
+/* CSS cho .box-container */
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* CSS cho .box */
+.box {
+  width: 30%;
+  background-color: rgb(0, 255, 128);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-color: #28a745;
+}
+
+.box p {
+  margin-bottom: 10px;
+}
+
+/* CSS cho .share */
+.share {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.share a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+/* CSS cho .link */
+a.link {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #9900FF;
+}
+
+/* CSS cho địa chỉ */
+.box p.address {
+  margin-bottom: 0;
+}
+
+.box p.address span {
+  display: block;
+  margin-bottom: 5px;
 }

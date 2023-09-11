@@ -7,7 +7,7 @@
 <title>Blog: Login</title>
 <%@include file="all_component/allCss.jsp"%>
 </head>
-<body style="background-color: #C9C0A5">
+<body style="background-color: #FAFAD2">
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container p-2">
 		<div class="row">
