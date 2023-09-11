@@ -240,6 +240,43 @@
     </div>
 
 </section>
+
+
+
+<section class="visit" id="visit">
+
+    <h1 class="heading">Contact </h1>
+
+        <div class="row">
+    
+            <form action="">
+           
+                <div class="inputBox">
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="inputBox">
+                    <input type="email" placeholder="Your e-mail">
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Message">
+                </div>
+    
+    
+                <input type="submit" value="Send A Message" class="btn">
+            </form>
+    
+                <div class="video">
+               <video src="img/contact.mp4" controls></video>
+            </div>
+        </div>
+
+</section>
+
+
+<%@include file="all_component/footer.jsp" %>
  
                 </body>
                 </html>
