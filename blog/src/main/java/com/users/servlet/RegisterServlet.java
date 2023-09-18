@@ -9,56 +9,51 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.DAO.userDaoImpl;
+import com.DAO.UserDaoImpl;
 import com.db.db_connect;
 import com.entity.users;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		try {
-			String name = req.getParameter("name");
-			String email = req.getParameter("email");
-			String phoneNum = req.getParameter("phoneNum");
-			String password = req.getParameter("password");
-			String check = req.getParameter("check");
+        try {
+            String name = req.getParameter("name");
+            String email = req.getParameter("email");
+            String phoneNum = req.getParameter("phoneNum");
+            String password = req.getParameter("password");
+            String check = req.getParameter("check");
 
-			users us = new users();
-			us.setName(name);
-			us.setEmail(email);
-			us.setPhoneNum(phoneNum);
-			us.setPassword(password);
+            users user = new users();
+            user.setName(name);
+            user.setEmail(email);
+            user.setPhoneNum(phoneNum);
+            user.setPassword(password);
 
-			HttpSession session = req.getSession();
+            HttpSession session = req.getSession();
 
-			if (check != null) {
-				userDaoImpl dao = new userDaoImpl(db_connect.getConn());
-				boolean f = dao.userRegister(us);
+            if (check != null) {
+                UserDaoImpl dao = new UserDaoImpl(db_connect.getConnection());
+                boolean success = dao.userRegister(user);
 
-				if (f) 
-				{
-//					System.out.println("User Register Success...");
-					session.setAttribute("succMsg","Registration Successfully.");
-					resp.sendRedirect("register.jsp");
-				} else {
-//					System.out.println("Something wrong on the server.");
-					session.setAttribute("failedMsg","Registration Successfully.");
-					resp.sendRedirect("register.jsp");
-				}
-			} else {
-//				System.out.println("Please Check Agree & Terms Condition");
-				session.setAttribute("failedMsg","Please Check Agree & Terms Condition");
-				resp.sendRedirect("register.jsp");
-			}
-		}
-
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
+                if (success) {
+                    session.setAttribute("succMsg", "Registration Successfully.");
+                    resp.sendRedirect("index.jsp");
+                    return;
+                } else {
+                    session.setAttribute("failedMsg", "Registration Failed.");
+                    resp.sendRedirect("register.jsp");
+                    return;
+                }
+            } else {
+                session.setAttribute("failedMsg", "Please Check Agree & Terms Condition");
+                resp.sendRedirect("register.jsp");
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

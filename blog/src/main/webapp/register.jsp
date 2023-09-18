@@ -49,7 +49,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Phone Number</label> <input
-									type="number" class="form-control" id="exampleInputEmail1"
+									type="textfield" class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp" required="required" name="phoneNum">
 
 							</div>

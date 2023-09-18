@@ -22,22 +22,24 @@
 						<c:remove var="faill" scope="session" />
 						</c:if>
 				
-				
+			
 				
 						<form action="login" method="post">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label> <input
 									type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" required="required">
+									aria-describedby="emailHelp" required="required" name="email">
 								
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label> <input
-									type="password" class="form-control" id="exampleInputPassword1" required="required" name="password">
+									type="password" class="form-control" id="exampleInputPassword1" 
+									required="required" name="password">
 							</div>
-							
+							<div class="text-center">
 								<button type="submit" class="btn btn-primary">Login</button><br>
 								<a href="register.jsp">Register</a>
+							</div>
 							</div>
 						</form>
 
